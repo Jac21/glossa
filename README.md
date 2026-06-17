@@ -2,7 +2,8 @@
 
 Personal glossary of self-coined terms.
 
-[![Build Status](https://github.com/Jac21/glossa/actions/workflows/.github/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Jac21/glossa/actions)
+[![Node.js CI](https://github.com/Jac21/glossa/actions/workflows/node.js.yml/badge.svg)](https://github.com/Jac21/glossa/actions/workflows/node.js.yml)
+[![Deploy to GitHub Pages](https://github.com/Jac21/glossa/actions/workflows/deploy.yml/badge.svg)](https://github.com/Jac21/glossa/actions/workflows/deploy.yml)
 
 ## Overview
 
