@@ -32,23 +32,41 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 font-sans selection:bg-stone-200">
+    <div className="min-h-screen text-stone-900 font-sans selection:bg-stone-300 lofi-wave-bg">
+      {/* Custom CSS for the Lo-Fi Ocean Wave Background 
+        We inject it directly so Tailwind doesn't strip it.
+      */}
+      <style>
+        {`
+          @keyframes wave-drift {
+            0% { background-position: 0px 0px; }
+            100% { background-position: -60px 30px; }
+          }
+          .lofi-wave-bg {
+            background-color: #fafaf9; /* Tailwind stone-50 */
+            /* This is a URL-encoded SVG of a repeating sine wave */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15 Q 15 5 30 15 T 60 15' fill='none' stroke='%23e7e5e4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            animation: wave-drift 8s linear infinite;
+          }
+        `}
+      </style>
+
       {/* Header */}
-      <header className="bg-white border-b border-stone-200 sticky top-0 z-10">
-        <div className="max-w-3xl mx-auto px-6 py-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <header className="bg-[#fffdfa] border-b-4 border-stone-900 sticky top-0 z-10 shadow-[0_4px_0_0_#1c1917]">
+        <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <Book className="w-8 h-8 text-stone-700" />
-            <h1 className="text-3xl font-serif font-bold tracking-tight text-stone-800">Glossa</h1>
+            <Book className="w-8 h-8 text-stone-900" />
+            <h1 className="text-3xl font-serif font-black uppercase tracking-tight text-stone-900 mt-1">Glossa.</h1>
           </div>
           
           <div className="relative">
-            <Search className="w-5 h-5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-5 h-5 text-stone-900 absolute left-3 top-1/2 -translate-y-1/2" />
             <input 
               type="text" 
-              placeholder="Search words..." 
+              placeholder="SEARCH ARCHIVE..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full md:w-64 pl-10 pr-4 py-2 bg-stone-100 border-transparent rounded-full focus:bg-white focus:border-stone-300 focus:ring-2 focus:ring-stone-200 outline-none transition-all"
+              className="w-full md:w-72 pl-10 pr-4 py-2 bg-[#fffdfa] border-2 border-stone-900 rounded-none shadow-[4px_4px_0_0_#1c1917] focus:translate-y-[2px] focus:translate-x-[2px] focus:shadow-[2px_2px_0_0_#1c1917] outline-none transition-all font-mono text-sm placeholder:text-stone-500 font-bold uppercase"
             />
           </div>
         </div>
@@ -59,77 +77,90 @@ export default function App() {
         <div className="space-y-12">
           {filteredWords.length > 0 ? (
             filteredWords.map((item) => (
-              <article key={item.id} className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-stone-100 transition-all hover:shadow-md">
+              <article key={item.id} className="bg-[#fffdfa] p-8 md:p-10 border-4 border-stone-900 shadow-[8px_8px_0_0_#1c1917] transition-all hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[12px_12px_0_0_#1c1917] relative">
                 
+                {/* Decorative Pin/Tape detail */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-4 bg-stone-200 border-2 border-stone-900 rotate-2 opacity-80 shadow-sm"></div>
+
                 {/* Word & Pronunciation */}
-                <div className="mb-6">
-                  <h2 className="text-4xl font-serif font-bold text-stone-900 mb-2">{item.word}</h2>
-                  <div className="flex flex-wrap items-baseline gap-3 text-stone-500">
-                    <span className="italic font-medium text-stone-700">{item.partOfSpeech}</span>
-                    <span className="text-sm">{item.pronunciation}</span>
+                <div className="mb-8 border-b-2 border-stone-900 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                  <div>
+                    <h2 className="text-5xl font-serif font-black text-stone-900 tracking-tight">{item.word}</h2>
+                  </div>
+                  <div className="flex items-center gap-3 font-mono bg-stone-100 border-2 border-stone-900 px-3 py-1 shadow-[2px_2px_0_0_#1c1917]">
+                    <span className="font-bold text-stone-900 uppercase text-xs">{item.partOfSpeech}</span>
+                    <span className="text-xs text-stone-600">[{item.pronunciation}]</span>
                   </div>
                 </div>
 
-                {/* Roots & Etymology */}
-                <div className="mb-6 pb-6 border-b border-stone-100 space-y-2">
-                  <p className="text-sm text-stone-500">
-                    <span className="font-semibold uppercase tracking-wider text-xs mr-2">Roots:</span> 
-                    {item.roots}
-                  </p>
+                {/* Roots & Etymology (Typewriter look) */}
+                <div className="mb-8 space-y-3 bg-stone-100 border-2 border-stone-900 p-4 font-mono text-sm shadow-[inset_2px_2px_0_0_rgba(0,0,0,0.05)]">
+                  <div className="flex gap-4">
+                    <span className="font-bold uppercase tracking-wider text-stone-900 min-w-[120px]">ORIGIN:</span> 
+                    <span className="text-stone-700">{item.roots}</span>
+                  </div>
                   {item.dateCoined && (
-                    <p className="text-sm text-stone-500">
-                      <span className="font-semibold uppercase tracking-wider text-xs mr-2">First Known Use:</span> 
-                      {item.dateCoined}
-                    </p>
+                    <div className="flex gap-4">
+                      <span className="font-bold uppercase tracking-wider text-stone-900 min-w-[120px]">ESTABLISHED:</span> 
+                      <span className="text-stone-700">{item.dateCoined}</span>
+                    </div>
                   )}
                 </div>
 
                 {/* Definition */}
-                <div className="prose prose-stone mb-8">
-                  <p className="text-lg leading-relaxed text-stone-800">
+                <div className="prose prose-stone max-w-none mb-10">
+                  <p className="text-xl leading-relaxed text-stone-900 font-serif font-medium">
                     {item.definition}
                   </p>
                 </div>
 
                 {/* Forms (if available) */}
                 {(item.adjective || item.verb) && (
-                  <div className="flex gap-4 mb-6 text-sm text-stone-600 bg-stone-50 p-4 rounded-lg">
-                    {item.verb && <div><strong>Verb:</strong> {item.verb}</div>}
-                    {item.adjective && <div><strong>Adjective:</strong> {item.adjective}</div>}
+                  <div className="flex flex-wrap gap-4 mb-10 font-mono text-sm border-t-2 border-stone-900 pt-6">
+                    {item.verb && (
+                      <div className="bg-stone-900 text-[#fffdfa] px-3 py-1 rounded-sm">
+                        <span className="text-stone-400 mr-2">VERB:</span>{item.verb}
+                      </div>
+                    )}
+                    {item.adjective && (
+                      <div className="bg-stone-900 text-[#fffdfa] px-3 py-1 rounded-sm">
+                        <span className="text-stone-400 mr-2">ADJ:</span>{item.adjective}
+                      </div>
+                    )}
                   </div>
                 )}
 
                 {/* Example Quote */}
-                <blockquote className="relative pl-6 text-stone-600 italic border-l-4 border-stone-300">
-                  <Quote className="absolute -left-2 -top-2 w-8 h-8 text-stone-200 -z-10" />
+                <blockquote className="relative p-6 bg-stone-100 border-2 border-stone-900 text-stone-800 font-serif italic text-lg shadow-[4px_4px_0_0_#1c1917]">
+                  <Quote className="absolute -left-3 -top-4 w-8 h-8 text-stone-900 bg-[#fffdfa] border-2 border-stone-900 p-1 rounded-full" />
                   "{item.example}"
                 </blockquote>
                 
               </article>
             ))
           ) : (
-            <div className="text-center py-20 text-stone-500">
-              <p className="text-xl">No words found matching "{searchTerm}"</p>
+            <div className="text-center py-20 bg-[#fffdfa] border-4 border-stone-900 shadow-[8px_8px_0_0_#1c1917]">
+              <p className="text-xl font-mono uppercase font-bold text-stone-500">No signals found for "{searchTerm}"</p>
             </div>
           )}
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="max-w-3xl mx-auto px-6 py-8 mt-4 border-t border-stone-200 flex flex-col items-center gap-4">
-        <div className="flex justify-center gap-6">
-          <a href="https://github.com/Jac21" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-700 transition-colors" aria-label="GitHub">
-            <Github className="w-5 h-5" />
+      <footer className="max-w-3xl mx-auto px-6 py-12 mt-12 border-t-4 border-stone-900 flex flex-col items-center gap-6 bg-[#fffdfa] shadow-[0_-4px_0_0_#1c1917]">
+        <div className="flex justify-center gap-8">
+          <a href="https://github.com/Jac21" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:-translate-y-1 hover:text-stone-600 transition-all drop-shadow-[2px_2px_0_rgba(28,25,23,0.2)]" aria-label="GitHub">
+            <Github className="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com/in/jeremycantu/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-700 transition-colors" aria-label="LinkedIn">
-            <Linkedin className="w-5 h-5" />
+          <a href="https://www.linkedin.com/in/jeremycantu/" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:-translate-y-1 hover:text-stone-600 transition-all drop-shadow-[2px_2px_0_rgba(28,25,23,0.2)]" aria-label="LinkedIn">
+            <Linkedin className="w-6 h-6" />
           </a>
-          <a href="https://www.instagram.com/jeremy.cantu21/" target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-stone-700 transition-colors" aria-label="Instagram">
-            <Instagram className="w-5 h-5" />
+          <a href="https://www.instagram.com/jeremy.cantu21/" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:-translate-y-1 hover:text-stone-600 transition-all drop-shadow-[2px_2px_0_rgba(28,25,23,0.2)]" aria-label="Instagram">
+            <Instagram className="w-6 h-6" />
           </a>
         </div>
-        <p className="text-xs text-stone-400">
-          Glossa by <a href="https://www.jeremycantu.com" target="_blank" rel="noopener noreferrer" className="hover:text-stone-700 underline underline-offset-2 transition-colors">Jeremy Cantu</a>
+        <p className="font-mono text-sm font-bold uppercase tracking-wider text-stone-900">
+          ARCHIVE MAINTAINED BY <a href="https://www.jeremycantu.com" target="_blank" rel="noopener noreferrer" className="relative inline-block border-b-2 border-stone-900 hover:bg-stone-900 hover:text-[#fffdfa] transition-colors px-1">JEREMY CANTU</a>
         </p>
       </footer>
     </div>
