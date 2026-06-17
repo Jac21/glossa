@@ -1,29 +1,25 @@
-# Astro Starter Kit: Minimal
+# 📚 Glossa
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal glossary of self-coined terms.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![Build Status](https://github.com/Jac21/glossa/actions/workflows/.github/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Jac21/glossa/actions)
+
+## Overview
+
+**Glossa** is a curated collection of self-coined terminology built with [Astro](https://astro.build). It serves as a personal reference for unique concepts and definitions.
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
 ```text
 /
-├── public/
+├── public/                 # Static assets (images, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── pages/             # Astro pages & glossary entries
+│   └── components/        # Reusable Astro/UI components
 └── package.json
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -38,6 +34,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 🛠 Built With
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Astro** - Static site generation
+- **JavaScript** - Core logic
+- **CSS** - Styling
+
+## 📖 Learn More
+
+- [Astro Documentation](https://docs.astro.build)
+- [Astro Community Discord](https://astro.build/chat)
