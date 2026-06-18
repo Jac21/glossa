@@ -10,21 +10,8 @@ const Instagram = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" wid
 const Sun = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>;
 const Moon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>;
 
-// Local JSON data source
-const wordsData = [
-  {
-    id: "latentia",
-    word: "latentia",
-    partOfSpeech: "noun",
-    pronunciation: "\\ lə-ˈten-shə \\",
-    roots: "Latin 'latere' (to lie hidden) + English 'latch'",
-    dateCoined: "June 2026",
-    definition: "The quiet grace of manipulating a physical object to erase your own presence; specifically, fully depressing a door handle before closing it to suppress the latch-click, ensuring the peace of those inside remains unbroken.",
-    adjective: "latentious",
-    verb: "to latent",
-    example: "He stepped into the hallway, engaging in a brief moment of latentia as he held the brass handle down, riding it slowly back into place so the midnight quiet wouldn't shatter."
-  }
-];
+// Import words data from JSON file
+import wordsData from '../data/words.json';
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,18 +89,18 @@ export default function App() {
           <div className="max-w-3xl mx-auto px-6 py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <Book className="w-8 h-8 text-[var(--b-fg)]" />
-              <h1 className="text-3xl font-serif font-black uppercase tracking-tight text-[var(--b-fg)] mt-1">Glossa.</h1>
+              <h1 className="text-3xl font-serif font-black uppercase tracking-tight text-[var(--b-fg)] mt-1"><a href="https://jac21.github.io/glossa/" rel="noopener noreferrer">Glossa.</a></h1>
             </div>
             
             <div className="flex items-center gap-4">
-              <div className="relative">
-                <Search className="w-5 h-5 text-[var(--b-fg)] absolute left-3 top-1/2 -translate-y-1/2" />
+              <div className="relative focus-within:translate-y-[2px] focus-within:translate-x-[2px] transition-all">
+                <Search className="w-5 h-5 text-[var(--b-fg)] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                 <input 
                   type="text" 
                   placeholder="SEARCH ARCHIVE..." 
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full md:w-64 pl-10 pr-4 py-2 bg-[var(--b-bg)] border-2 border-[var(--b-fg)] rounded-none shadow-[4px_4px_0_0_var(--b-fg)] focus:translate-y-[2px] focus:translate-x-[2px] focus:shadow-[2px_2px_0_0_var(--b-fg)] outline-none transition-all font-mono text-sm placeholder:text-[var(--b-text-dim)] font-bold uppercase text-[var(--b-fg)]"
+                  className="w-full md:w-64 pl-10 pr-4 py-2 bg-[var(--b-bg)] border-2 border-[var(--b-fg)] rounded-none shadow-[4px_4px_0_0_var(--b-fg)] focus:shadow-[2px_2px_0_0_var(--b-fg)] outline-none transition-all font-mono text-sm placeholder:text-[var(--b-text-dim)] font-bold uppercase text-[var(--b-fg)]"
                 />
               </div>
 
