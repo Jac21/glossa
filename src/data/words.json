@@ -1,5 +1,17 @@
 [
   {
+    "id": "procentia",
+    "word": "procentia",
+    "partOfSpeech": "noun",
+    "pronunciation": "\\ prō-ˈsen-shə \\",
+    "roots": "A portmanteau of 'proscenium' (the stage arch) and 'docent' (a museum guide)",
+    "dateCoined": "June 2026",
+    "definition": "The specific ego-anxiety of introducing two disparate friends; characterized by a breathless pride as the interaction begins, followed immediately by a compulsive need to over-explain and guide their conversation to ensure your taste in people is validated.",
+    "adjective": "procential",
+    "verb": "to procent",
+    "example": "Caught in a sudden wave of procentia, she spent the first ten minutes of the dinner party frantically translating Mark's dry sarcasm just to guarantee her sister would understand why she liked him."
+  },
+  {
     "id": "latentia",
     "word": "latentia",
     "partOfSpeech": "noun",
