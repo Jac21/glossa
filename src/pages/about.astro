@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>About - Glossa</title>
+  </head>
+  <body>
+    <div class="about-content">
+      <div class="about-card">
+        <p>Attempts to capture a piece of this world.</p>
+      </div>
+    </div>
+    <style>
+      .about-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        padding: 2rem;
+      }
+      .about-card {
+        background: var(--card-bg, #f5f5f5);
+        border-radius: 8px;
+        padding: 3rem;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .about-card p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
