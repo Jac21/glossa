@@ -7,7 +7,7 @@ Personal glossary of self-coined terms.
 
 ## Overview
 
-**[Glossa](https://jac21.github.io/glossa/)** is a curated collection of self-coined terminology built with [Astro](https://astro.build). It serves as a personal reference for unique concepts and definitions.
+**[Glossa](https://glossaglossa.com/)** is a curated collection of self-coined terminology built with [Astro](https://astro.build). It serves as a personal reference for unique concepts and definitions.
 
 ## 🚀 Project Structure
 
