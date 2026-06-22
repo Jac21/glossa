@@ -11,6 +11,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  site: "https://jac21.github.io",
-  base: "/glossa",
+  site: "https://glossaglossa.com",
+  base: "/",
 });
