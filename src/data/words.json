@@ -1,15 +1,15 @@
 [
   {
-    "id": "pappion",
-    "word": "pappion",
+    "id": "latentia",
+    "word": "latentia",
     "partOfSpeech": "noun",
-    "pronunciation": "\\ ˈpa-pē-ən \\",
-    "roots": "Botanical Latin 'pappus' (feathery dandelion bristles) + '-ion' (suffix denoting a discrete fundamental particle)",
-    "dateCoined": "July 2026",
-    "definition": "A fragile, untethered thought or passing curiosity that surfaces during a transitional moment, inherently destined to be scattered by the breeze of shifting attention before it can be recorded.",
-    "adjective": "pappionic",
-    "verb": "",
-    "example": "Watching the highway lines blur past, a sudden pappion regarding the name of a forgotten childhood book bloomed in her mind, only to scatter into the rhythm of the traffic before she reached her destination."
+    "pronunciation": "\\ lə-ˈten-shə \\",
+    "roots": "Latin 'latere' (to lie hidden) + English 'latch'",
+    "dateCoined": "June 2026",
+    "definition": "The quiet grace of manipulating a physical object to erase your own presence; specifically, fully depressing a door handle before closing it to suppress the latch-click, ensuring the peace of those inside remains unbroken.",
+    "adjective": "latentious",
+    "verb": "to latent",
+    "example": "He stepped into the hallway, engaging in a brief moment of latentia as he held the brass handle down, riding it slowly back into place so the midnight quiet wouldn't shatter."
   },
   {
     "id": "procentia",
@@ -24,15 +24,15 @@
     "example": "Caught in a sudden wave of procentia, she spent the first ten minutes of the dinner party frantically translating Mark's dry sarcasm just to guarantee her sister would understand why she liked him."
   },
   {
-    "id": "latentia",
-    "word": "latentia",
+    "id": "pappion",
+    "word": "pappion",
     "partOfSpeech": "noun",
-    "pronunciation": "\\ lə-ˈten-shə \\",
-    "roots": "Latin 'latere' (to lie hidden) + English 'latch'",
-    "dateCoined": "June 2026",
-    "definition": "The quiet grace of manipulating a physical object to erase your own presence; specifically, fully depressing a door handle before closing it to suppress the latch-click, ensuring the peace of those inside remains unbroken.",
-    "adjective": "latentious",
-    "verb": "to latent",
-    "example": "He stepped into the hallway, engaging in a brief moment of latentia as he held the brass handle down, riding it slowly back into place so the midnight quiet wouldn't shatter."
+    "pronunciation": "\\ ˈpa-pē-ən \\",
+    "roots": "Botanical Latin 'pappus' (feathery dandelion bristles) + '-ion' (suffix denoting a discrete fundamental particle)",
+    "dateCoined": "July 2026",
+    "definition": "A fragile, untethered thought or passing curiosity that surfaces during a transitional moment, inherently destined to be scattered by the breeze of shifting attention before it can be recorded.",
+    "adjective": "pappionic",
+    "verb": "",
+    "example": "Watching the highway lines blur past, a sudden pappion regarding the name of a forgotten childhood book bloomed in her mind, only to scatter into the rhythm of the traffic before she reached her destination."
   }
 ]

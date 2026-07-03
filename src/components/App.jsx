@@ -31,9 +31,10 @@ export default function App() {
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
-  const filteredWords = wordsData.filter(item => 
+  const filteredWordsInverted = wordsData.filter(item => 
     item.word.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  )
+  .reverse();
 
   return (
     // We drive the theme entirely via this wrapper class now to bypass Tailwind v4 defaults
@@ -119,8 +120,8 @@ export default function App() {
         {/* Main Content */}
         <main className="max-w-3xl mx-auto px-6 py-12">
           <div className="space-y-12">
-            {filteredWords.length > 0 ? (
-              filteredWords.map((item) => (
+            {filteredWordsInverted.length > 0 ? (
+              filteredWordsInverted.map((item) => (
                 <article key={item.id} className="bg-[var(--b-bg)] p-8 md:p-10 border-4 border-[var(--b-fg)] shadow-[8px_8px_0_0_var(--b-fg)] transition-all hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[12px_12px_0_0_var(--b-fg)] relative duration-300">
                   
                   {/* Decorative Pin/Tape detail */}
