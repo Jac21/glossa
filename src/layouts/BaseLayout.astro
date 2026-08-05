@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const siteURL = Astro.site ?? new URL(Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL("/og-image.png", siteURL);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#fffdfa" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="Glossa" />
+    <meta name="apple-mobile-web-app-title" content="Glossa" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Open Graph metadata powers previews in Facebook Messenger and other apps. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Glossa" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:secure_url" content={socialImageURL} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Glossa book icon and wordmark" />
+
+    <!-- Twitter/X uses these tags too, and many messaging apps read them as fallbacks. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta name="twitter:image:alt" content="The Glossa book icon and wordmark" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

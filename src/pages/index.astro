@@ -1,16 +1,13 @@
 ---
 import "../styles/global.css";
 import App from "../components/App.jsx";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Glossa</title>
-  </head>
-  <body>
-    <!-- The client:load directive ensures interactive bits like the search bar work -->
-    <App client:load />
-  </body>
-</html>
+<BaseLayout
+  title="Glossa — A Personal Glossary"
+  description="A personal glossary of self-coined terms, definitions, origins, and examples."
+>
+  <!-- The client:load directive ensures interactive bits like the search bar work -->
+  <App client:load />
+</BaseLayout>

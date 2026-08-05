@@ -1,14 +1,12 @@
 ---
 import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>About - Glossa</title>
-  </head>
-  <body>
+<BaseLayout
+  title="About Glossa"
+  description="Learn more about Glossa, a personal glossary of self-coined terms."
+>
     <div class="about-content">
       <div class="about-card">
         <p>Attempts to capture a piece of this world.</p>
@@ -36,5 +34,4 @@ import "../styles/global.css";
         margin: 0;
       }
     </style>
-  </body>
-</html>
+</BaseLayout>
