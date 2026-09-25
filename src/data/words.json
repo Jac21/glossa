@@ -6,7 +6,7 @@
     "pronunciation": "\\ lə-ˈten-shə \\",
     "roots": "Latin 'latere' (to lie hidden) + English 'latch'",
     "dateCoined": "June 2026",
-    "definition": "The quiet grace of manipulating a physical object to erase your own presence; specifically, fully depressing a door handle before closing it to suppress the latch-click, ensuring the peace of those inside remains unbroken.",
+    "definition": "The quiet grace of manipulating a physical object to erase your own presence; specifically, fully depressing a door handle before closing it to suppress the latch-click, ensuring the midnight quiet won't shatter.",
     "adjective": "latentious",
     "verb": "to latent",
     "example": "He stepped into the hallway, engaging in a brief moment of latentia as he held the brass handle down, riding it slowly back into place so the midnight quiet wouldn't shatter."
@@ -18,10 +18,10 @@
     "pronunciation": "\\ prō-ˈsen-shə \\",
     "roots": "A portmanteau of 'proscenium' (the stage arch) and 'docent' (a museum guide)",
     "dateCoined": "June 2026",
-    "definition": "The specific ego-anxiety of introducing two disparate friends; characterized by a breathless pride as the interaction begins, followed immediately by a compulsive need to over-explain and guide their conversation to ensure your taste in people is validated.",
+    "definition": "The specific ego-anxiety of introducing two disparate friends; characterized by a breathless pride as the interaction begins, followed immediately by a compulsive need to over-explain both parties to one another.",
     "adjective": "procential",
     "verb": "to procent",
-    "example": "Caught in a sudden wave of procentia, she spent the first ten minutes of the dinner party frantically translating Mark's dry sarcasm just to guarantee her sister would understand why she liked him."
+    "example": "Caught in a sudden wave of procentia, she spent the first ten minutes of the dinner party frantically translating Mark's dry sarcasm just to guarantee her sister would understand what he meant."
   },
   {
     "id": "pappion",
@@ -30,9 +30,21 @@
     "pronunciation": "\\ ˈpa-pē-ən \\",
     "roots": "Botanical Latin 'pappus' (feathery dandelion bristles) + '-ion' (suffix denoting a discrete fundamental particle)",
     "dateCoined": "July 2026",
-    "definition": "A fragile, untethered thought or passing curiosity that surfaces during a transitional moment, inherently destined to be scattered by the breeze of shifting attention before it can be recorded.",
+    "definition": "A fragile, untethered thought or passing curiosity that surfaces during a transitional moment, inherently destined to be scattered by the breeze of shifting attention before it can fully form.",
     "adjective": "pappionic",
     "verb": "",
-    "example": "Watching the highway lines blur past, a sudden pappion regarding the name of a forgotten childhood book bloomed in her mind, only to scatter into the rhythm of the traffic before she reached her destination."
+    "example": "Watching the highway lines blur past, a sudden pappion regarding the name of a forgotten childhood book bloomed in her mind, only to scatter into the rhythm of the traffic before she could grasp it."
+  },
+  {
+    "id": "somnoclasm",
+    "word": "somnoclasm",
+    "partOfSpeech": "noun",
+    "pronunciation": "\\ ˈsäm-nə-ˌkla-zəm \\",
+    "roots": "Latin somnus (sleep) + Greek klasma (a breaking, fracture, or shattering).",
+    "dateCoined": "September 2026",
+    "definition": "The sudden, devastating emotional fracture experienced in the first seconds of waking, when the joyous sanctuary of a visitation dream shatters against the cold reality of a loved one's permanent absence.",
+    "adjective": "somnoclastic",
+    "verb": "",
+    "example": "He woke with her laugh still ringing in his ears, but the somnoclasm hit before he could even open his eyes, leaving him staring at an empty room."
   }
 ]
